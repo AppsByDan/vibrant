@@ -1458,7 +1458,7 @@ static int vbt__parse_css_color_name(const char* value,
                                      vbt_recv_t* recv) {
   const vbt__css_color_t* css_color = vbt__find_css_color(value, len);
 
-  if (*css_color->name != '\0') {
+  if (css_color->name != NULL) {
     return vbt__write_u8(recv, css_color->color[0], css_color->color[1],
                          css_color->color[2], css_color->color[3]);
   }
