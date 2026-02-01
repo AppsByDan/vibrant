@@ -1,0 +1,14 @@
+#include "vunit.h"
+
+@TEST_INCLUDES@
+
+#define VIBRANT_IMPLEMENTATION
+#include <vibrant.h>
+
+int main(int argc, char** argv) {
+  (void)argc;
+  (void)argv;
+  static const vu_test_id_t TESTS[] = { @TESTIDS@ };
+
+  return vu_run(TESTS, vu_arr_len(TESTS));
+}
